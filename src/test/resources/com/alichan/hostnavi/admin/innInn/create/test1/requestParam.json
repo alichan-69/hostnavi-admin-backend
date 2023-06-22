@@ -1,0 +1,21 @@
+{
+	"address": "神奈川県横浜市",
+	"amenityIdList": [
+		1,
+		2
+	],
+	"bathroomNumber": 1,
+	"bedNumber": 1,
+	"bedroomNumber": 1,
+	"description": "素敵な宿です。",
+	"facilityIdList": [
+		1,
+		2
+	],
+	"fee": 1000,
+	"guestNumber": 1,
+	"name": "石の家",
+	"statusId": 1,
+	"typeId": 1,
+	"userId": 1
+}

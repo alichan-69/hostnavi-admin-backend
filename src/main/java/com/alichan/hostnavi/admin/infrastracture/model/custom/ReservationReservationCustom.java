@@ -1,0 +1,72 @@
+package com.alichan.hostnavi.admin.infrastracture.model.custom;
+
+import java.sql.Date;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class ReservationReservationCustom {
+  private Long id;
+  private Long innId;
+  private Long innUserId;
+  private String innUserImageUrl;
+  private String innUserName;
+  private String innUserDescription;
+  private String innUserAddress;
+  private String innUserOccupation;
+  private String innUserPhoneNumber;
+  private String innUserMail;
+  private Long innUserCreditCardId;
+  private String innUserCreditCardNumber;
+  private Date innUserCreditCardExpirationDate;
+  private String innUserCreditCardCvv;
+  private Date innUserCreditCardCreateTime;
+  private Date innUserCreditCardUpdateTime;
+  private String innUserFacebookUrl;
+  private String innUserInstagramUrl;
+  private String innUserTwitterUrl;
+  private Date innUserCreateTime;
+  private Date innUserUpdateTime;
+  private String innName;
+  private String innDescription;
+  private Integer innFee;
+  private Integer innStatusId;
+  private String innStatusName;
+  private Integer innTypeId;
+  private String innTypeName;
+  private String innAddress;
+  private Integer innGuestNumber;
+  private Integer innBedroomNumber;
+  private Integer innBedNumber;
+  private Integer innBathroomNumber;
+  private Date innCreateTime;
+  private Date innUpdateTime;
+  private Integer statusId;
+  private String statusName;
+  private Long reserverId;
+  private String reserverImageUrl;
+  private String reserverName;
+  private String reserverDescription;
+  private String reserverAddress;
+  private String reserverOccupation;
+  private String reserverPhoneNumber;
+  private String reserverMail;
+  private Long reserverCreditCardId;
+  private String reserverCreditCardNumber;
+  private Date reserverCreditCardExpirationDate;
+  private String reserverCreditCardCvv;
+  private Date reserverCreditCardCreateTime;
+  private Date reserverCreditCardUpdateTime;
+  private String reserverFacebookUrl;
+  private String reserverInstagramUrl;
+  private String reserverTwitterUrl;
+  private Date reserverCreateTime;
+  private Date reserverUpdateTime;
+  private Date checkInTime;
+  private Date checkOutTime;
+  private Integer guestNumber;
+  private Integer fee;
+  private Date createTime;
+  private Date updateTime;
+}

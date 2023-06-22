@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alichan.hostnavi.admin.infrastracture.mapper.custom.ReservationReservationCustomMapper">
+    <resultMap id="ReservationReservationCustomResultMap" type="com.alichan.hostnavi.admin.infrastracture.model.custom.ReservationReservationCustom">
+	    <id column="id" jdbcType="BIGINT" property="id" />
+	    <result column="inn_id" jdbcType="BIGINT" property="innId" />
+	    <result column="inn_user_id" jdbcType="BIGINT" property="innUserId" />
+	    <result column="inn_user_image_url" jdbcType="VARCHAR" property="innUserImageUrl" />
+	    <result column="inn_user_name" jdbcType="VARCHAR" property="innUserName" />
+	    <result column="inn_user_description" jdbcType="VARCHAR" property="innUserDescription" />
+	    <result column="inn_user_address" jdbcType="VARCHAR" property="innUserAddress" />
+	    <result column="inn_user_occupation" jdbcType="VARCHAR" property="innUserOccupation" />
+	    <result column="inn_user_phone_number" jdbcType="VARCHAR" property="innUserPhoneNumber" />
+	    <result column="inn_user_mail" jdbcType="VARCHAR" property="innUserMail" />
+	    <result column="inn_user_credit_card_id" jdbcType="BIGINT" property="innUserCreditCardId" />
+	    <result column="inn_user_credit_card_card_number" jdbcType="VARCHAR" property="innUserCreditCardNumber" />
+	    <result column="inn_user_credit_card_expiration_date" jdbcType="TIMESTAMP" property="innUserCreditCardExpirationDate" />
+	    <result column="inn_user_credit_card_cvv" jdbcType="VARCHAR" property="innUserCreditCardCvv" />
+	    <result column="inn_user_credit_card_create_time" jdbcType="TIMESTAMP" property="innUserCreditCardCreateTime" />
+	    <result column="inn_user_credit_card_update_time" jdbcType="TIMESTAMP" property="innUserCreditCardUpdateTime" />
+	    <result column="inn_user_facebook_url" jdbcType="VARCHAR" property="innUserFacebookUrl" />
+	    <result column="inn_user_instagram_url" jdbcType="VARCHAR" property="innUserInstagramUrl" />
+	    <result column="inn_user_twitter_url" jdbcType="VARCHAR" property="innUserTwitterUrl" />
+	    <result column="inn_user_create_time" jdbcType="TIMESTAMP" property="innUserCreateTime" />
+	    <result column="inn_user_update_time" jdbcType="TIMESTAMP" property="innUserUpdateTime" />
+	    <result column="inn_name" jdbcType="VARCHAR" property="innName" />
+	    <result column="inn_description" jdbcType="VARCHAR" property="innDescription" />
+	    <result column="inn_fee" jdbcType="INTEGER" property="innFee" />
+	    <result column="inn_status_id" jdbcType="INTEGER" property="innStatusId" />
+	    <result column="inn_status_name" jdbcType="VARCHAR" property="innStatusName" />
+	    <result column="inn_type_id" jdbcType="INTEGER" property="innTypeId" />
+	    <result column="inn_type_name" jdbcType="VARCHAR" property="innTypeName" />
+	    <result column="inn_address" jdbcType="VARCHAR" property="innAddress" />
+	    <result column="inn_guest_number" jdbcType="INTEGER" property="innGuestNumber" />
+	    <result column="inn_bedroom_number" jdbcType="INTEGER" property="innBedroomNumber" />
+	    <result column="inn_bed_number" jdbcType="INTEGER" property="innBedNumber" />
+	    <result column="inn_bathroom_number" jdbcType="INTEGER" property="innBathroomNumber" />
+	    <result column="inn_create_time" jdbcType="TIMESTAMP" property="innCreateTime" />
+	    <result column="inn_update_time" jdbcType="TIMESTAMP" property="innUpdateTime" />
+	    <result column="status_id" jdbcType="INTEGER" property="statusId" />
+	    <result column="status_name" jdbcType="VARCHAR" property="statusName" />
+	    <result column="reserver_id" jdbcType="BIGINT" property="reserverId" />
+	    <result column="reserver_image_url" jdbcType="VARCHAR" property="reserverImageUrl" />
+	    <result column="reserver_name" jdbcType="VARCHAR" property="reserverName" />
+	    <result column="reserver_description" jdbcType="VARCHAR" property="reserverDescription" />
+	    <result column="reserver_address" jdbcType="VARCHAR" property="reserverAddress" />
+	    <result column="reserver_occupation" jdbcType="VARCHAR" property="reserverOccupation" />
+	    <result column="reserver_phone_number" jdbcType="VARCHAR" property="reserverPhoneNumber" />
+	    <result column="reserver_mail" jdbcType="VARCHAR" property="reserverMail" />
+	    <result column="reserver_credit_card_id" jdbcType="BIGINT" property="reserverCreditCardId" />
+	    <result column="reserver_credit_card_card_number" jdbcType="VARCHAR" property="reserverCreditCardNumber" />
+	    <result column="reserver_credit_card_expiration_date" jdbcType="TIMESTAMP" property="reserverCreditCardExpirationDate" />
+	    <result column="reserver_credit_card_cvv" jdbcType="VARCHAR" property="reserverCreditCardCvv" />
+	    <result column="reserver_credit_card_create_time" jdbcType="TIMESTAMP" property="reserverCreditCardCreateTime" />
+	    <result column="reserver_credit_card_update_time" jdbcType="TIMESTAMP" property="reserverCreditCardUpdateTime" />
+	    <result column="reserver_facebook_url" jdbcType="VARCHAR" property="reserverFacebookUrl" />
+	    <result column="reserver_instagram_url" jdbcType="VARCHAR" property="reserverInstagramUrl" />
+	    <result column="reserver_twitter_url" jdbcType="VARCHAR" property="reserverTwitterUrl" />
+	    <result column="reserver_create_time" jdbcType="TIMESTAMP" property="reserverCreateTime" />
+	    <result column="reserver_update_time" jdbcType="TIMESTAMP" property="reserverUpdateTime" />
+	    <result column="check_in_time" jdbcType="TIMESTAMP" property="checkInTime" />
+	    <result column="check_out_time" jdbcType="TIMESTAMP" property="checkOutTime" />
+	    <result column="guest_number" jdbcType="INTEGER" property="guestNumber" />
+	    <result column="fee" jdbcType="INTEGER" property="fee" />
+	    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="selectAll" resultMap="ReservationReservationCustomResultMap">
+		SELECT
+            reservation.id,
+            inn.id inn_id,
+            inn_user.id inn_user_id,
+            inn_user.image_url inn_user_image_url,
+            inn_user.name inn_user_name,
+            inn_user.description inn_user_description,
+            inn_user.address inn_user_address,
+            inn_user.occupation inn_user_occupation,
+            inn_user.phone_number inn_user_phone_number,
+            inn_user.mail inn_user_mail,
+            inn_user_credit_card.id inn_user_credit_card_id,
+            inn_user_credit_card.card_number inn_user_credit_card_card_number,
+            inn_user_credit_card.expiration_date inn_user_credit_card_expiration_date,
+            inn_user_credit_card.cvv inn_user_credit_card_cvv,
+            inn_user_credit_card.create_time inn_user_credit_card_create_time,
+            inn_user_credit_card.update_time inn_user_credit_card_update_time,
+            inn_user.facebook_url inn_user_facebook_url,
+            inn_user.instagram_url inn_user_instagram_url,
+            inn_user.twitter_url inn_user_twitter_url,
+            inn_user.create_time inn_user_create_time,
+            inn_user.update_time inn_user_update_time,
+            inn.name inn_name,
+            inn.description inn_description,
+            inn.fee inn_fee,
+            inn_status.id inn_status_id,
+            inn_status.name inn_status_name,
+            inn_type.id inn_type_id,
+            inn_type.name inn_type_name,
+            inn.address inn_address,
+            inn.guest_number inn_guest_number,
+            inn.bedroom_number inn_bedroom_number,
+            inn.bed_number inn_bed_number,
+            inn.bathroom_number inn_bathroom_number,
+            inn.create_time inn_create_time,
+            inn.update_time inn_update_time,
+            reservation_status.id status_id,
+            reservation_status.name status_name,
+            reserver.id reserver_id,
+            reserver.image_url reserver_image_url,
+            reserver.name reserver_name,
+            reserver.description reserver_description,
+            reserver.address reserver_address,
+            reserver.occupation reserver_occupation,
+            reserver.phone_number reserver_phone_number,
+            reserver.mail reserver_mail,
+            reserver_credit_card.id reserver_credit_card_id,
+            reserver_credit_card.card_number reserver_credit_card_card_number,
+            reserver_credit_card.expiration_date reserver_credit_card_expiration_date,
+            reserver_credit_card.cvv reserver_credit_card_cvv,
+            reserver_credit_card.create_time reserver_credit_card_create_time,
+            reserver_credit_card.update_time reserver_credit_card_update_time,
+            reserver.facebook_url reserver_facebook_url,
+            reserver.instagram_url reserver_instagram_url,
+            reserver.twitter_url reserver_twitter_url,
+            reserver.create_time reserver_create_time,
+            reserver.update_time reserver_update_time,
+            reservation.check_in_time,
+            reservation.check_out_time,
+            reservation.guest_number,
+            reservation.fee,
+            reservation.create_time,
+            reservation.update_time
+        FROM `reservation_reservation` reservation
+            LEFT JOIN `inn_inn` inn ON reservation.inn_id = inn.id
+            LEFT JOIN `user_user` inn_user ON inn.user_id = inn_user.id
+            LEFT JOIN `user_credit_card` inn_user_credit_card ON inn_user.credit_card_id = inn_user_credit_card.id
+            LEFT JOIN `inn_status` inn_status ON inn.status_id = inn_status.id
+            LEFT JOIN `inn_type` inn_type ON inn.type_id = inn_type.id
+            LEFT JOIN `reservation_status` reservation_status ON reservation.status_id = reservation_status.id
+            LEFT JOIN `user_user` reserver ON reservation.reserver_id = reserver.id
+            LEFT JOIN `user_credit_card` reserver_credit_card ON reserver.credit_card_id = reserver_credit_card.id
+ 		WHERE
+            reservation.delete_flag = 0
+            AND inn.delete_flag = 0
+            AND inn_user.delete_flag = 0
+            AND inn_user_credit_card.delete_flag = 0
+            AND reserver.delete_flag = 0
+            AND reserver_credit_card.delete_flag = 0
+    </select>
+</mapper>

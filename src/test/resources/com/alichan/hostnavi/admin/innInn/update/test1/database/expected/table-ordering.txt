@@ -1,0 +1,3 @@
+inn_inn
+inn_inn_amenity_relation
+inn_inn_facility_relation

@@ -1,0 +1,65 @@
+{
+	"message": "成功",
+	"data": {
+		"id": 1,
+		"user": {
+			"id": 2,
+			"imageUrl": "http://localhost:8080",
+			"name": "山田花子",
+			"description": "素敵な人です。",
+			"address": "神奈川県横浜市",
+			"occupation": "エンジニア",
+			"phoneNumber": "01234567891",
+			"mail": "sample2@sample.com",
+			"facebookUrl": "http://localhost:8080",
+			"instagramUrl": "http://localhost:8080",
+			"twitterUrl": "http://localhost:8080",
+			"creditCard": {
+				"id": 2,
+				"cardNumber": "4242424242424242",
+				"expirationDate": "2024-01-01T00:00:00.000+09:00",
+				"cvv": "012",
+				"createTime": "2023-01-01T00:00:00.000+09:00",
+				"updateTime": "2023-01-01T00:00:00.000+09:00"
+			},
+			"createTime": "2023-01-01T00:00:00.000+09:00",
+			"updateTime": "2023-01-01T00:00:00.000+09:00"
+		},
+		"name": "木の家",
+		"description": "微妙な宿です。",
+		"fee": 2000,
+		"status": {
+			"id": 2,
+			"name": "公開停止中"
+		},
+		"type": {
+			"id": 2,
+			"name": "個室"
+		},
+		"address": "東京都新宿区",
+		"guestNumber": 2,
+		"bedroomNumber": 2,
+		"bedNumber": 2,
+		"bathroomNumber": 2,
+		"amenityList": [
+			{
+				"id": 3,
+				"name": "ボディーソープ"
+			},
+			{
+				"id": 4,
+				"name": "洗顔料"
+			}
+		],
+		"facilityList": [
+			{
+				"id": 3,
+				"name": "キッチン"
+			},
+			{
+				"id": 4,
+				"name": "洗濯機"
+			}
+		]
+	}
+}

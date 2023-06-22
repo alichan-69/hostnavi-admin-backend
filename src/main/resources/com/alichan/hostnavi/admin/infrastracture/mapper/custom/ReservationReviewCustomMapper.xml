@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alichan.hostnavi.admin.infrastracture.mapper.custom.ReservationReviewCustomMapper">
+	<resultMap id="ReservationReviewCustomResultMap" type="com.alichan.hostnavi.admin.infrastracture.model.custom.ReservationReviewCustom">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="reservation_id" jdbcType="BIGINT" property="reservationId" />
+		<result column="reservation_inn_id" jdbcType="BIGINT" property="reservationInnId" />
+	    <result column="reservation_inn_user_id" jdbcType="BIGINT" property="reservationInnUserId" />
+	    <result column="reservation_inn_user_image_url" jdbcType="VARCHAR" property="reservationInnUserImageUrl" />
+	    <result column="reservation_inn_user_name" jdbcType="VARCHAR" property="reservationInnUserName" />
+	    <result column="reservation_inn_user_description" jdbcType="VARCHAR" property="reservationInnUserDescription" />
+	    <result column="reservation_inn_user_address" jdbcType="VARCHAR" property="reservationInnUserAddress" />
+	    <result column="reservation_inn_user_occupation" jdbcType="VARCHAR" property="reservationInnUserOccupation" />
+	    <result column="reservation_inn_user_phone_number" jdbcType="VARCHAR" property="reservationInnUserPhoneNumber" />
+	    <result column="reservation_inn_user_mail" jdbcType="VARCHAR" property="reservationInnUserMail" />
+	    <result column="reservation_inn_user_credit_card_id" jdbcType="BIGINT" property="reservationInnUserCreditCardId" />
+	    <result column="reservation_inn_user_credit_card_card_number" jdbcType="VARCHAR" property="reservationInnUserCreditCardNumber" />
+	    <result column="reservation_inn_user_credit_card_expiration_date" jdbcType="TIMESTAMP" property="reservationInnUserCreditCardExpirationDate" />
+	    <result column="reservation_inn_user_credit_card_cvv" jdbcType="VARCHAR" property="reservationInnUserCreditCardCvv" />
+	    <result column="reservation_inn_user_credit_card_create_time" jdbcType="TIMESTAMP" property="reservationInnUserCreditCardCreateTime" />
+	    <result column="reservation_inn_user_credit_card_update_time" jdbcType="TIMESTAMP" property="reservationInnUserCreditCardUpdateTime" />
+	    <result column="reservation_inn_user_facebook_url" jdbcType="VARCHAR" property="reservationInnUserFacebookUrl" />
+	    <result column="reservation_inn_user_instagram_url" jdbcType="VARCHAR" property="reservationInnUserInstagramUrl" />
+	    <result column="reservation_inn_user_twitter_url" jdbcType="VARCHAR" property="reservationInnUserTwitterUrl" />
+	    <result column="reservation_inn_user_create_time" jdbcType="TIMESTAMP" property="reservationInnUserCreateTime" />
+	    <result column="reservation_inn_user_update_time" jdbcType="TIMESTAMP" property="reservationInnUserUpdateTime" />
+	    <result column="reservation_inn_name" jdbcType="VARCHAR" property="reservationInnName" />
+	    <result column="reservation_inn_description" jdbcType="VARCHAR" property="reservationInnDescription" />
+	    <result column="reservation_inn_fee" jdbcType="INTEGER" property="reservationInnFee" />
+	    <result column="reservation_inn_status_id" jdbcType="INTEGER" property="reservationInnStatusId" />
+	    <result column="reservation_inn_status_name" jdbcType="VARCHAR" property="reservationInnStatusName" />
+	    <result column="reservation_inn_type_id" jdbcType="INTEGER" property="reservationInnTypeId" />
+	    <result column="reservation_inn_type_name" jdbcType="VARCHAR" property="reservationInnTypeName" />
+	    <result column="reservation_inn_address" jdbcType="VARCHAR" property="reservationInnAddress" />
+	    <result column="reservation_inn_guest_number" jdbcType="INTEGER" property="reservationInnGuestNumber" />
+	    <result column="reservation_inn_bedroom_number" jdbcType="INTEGER" property="reservationInnBedroomNumber" />
+	    <result column="reservation_inn_bed_number" jdbcType="INTEGER" property="reservationInnBedNumber" />
+	    <result column="reservation_inn_bathroom_number" jdbcType="INTEGER" property="reservationInnBathroomNumber" />
+	    <result column="reservation_inn_create_time" jdbcType="TIMESTAMP" property="reservationInnCreateTime" />
+	    <result column="reservation_inn_update_time" jdbcType="TIMESTAMP" property="reservationInnUpdateTime" />
+	    <result column="reservation_status_id" jdbcType="INTEGER" property="reservationStatusId" />
+	    <result column="reservation_status_name" jdbcType="VARCHAR" property="reservationStatusName" />
+	    <result column="reservation_reserver_id" jdbcType="BIGINT" property="reservationReserverId" />
+	    <result column="reservation_reserver_image_url" jdbcType="VARCHAR" property="reservationReserverImageUrl" />
+	    <result column="reservation_reserver_name" jdbcType="VARCHAR" property="reservationReserverName" />
+	    <result column="reservation_reserver_description" jdbcType="VARCHAR" property="reservationReserverDescription" />
+	    <result column="reservation_reserver_address" jdbcType="VARCHAR" property="reservationReserverAddress" />
+	    <result column="reservation_reserver_occupation" jdbcType="VARCHAR" property="reservationReserverOccupation" />
+	    <result column="reservation_reserver_phone_number" jdbcType="VARCHAR" property="reservationReserverPhoneNumber" />
+	    <result column="reservation_reserver_mail" jdbcType="VARCHAR" property="reservationReserverMail" />
+	    <result column="reservation_reserver_credit_card_id" jdbcType="BIGINT" property="reservationReserverCreditCardId" />
+	    <result column="reservation_reserver_credit_card_card_number" jdbcType="VARCHAR" property="reservationReserverCreditCardNumber" />
+	    <result column="reservation_reserver_credit_card_expiration_date" jdbcType="TIMESTAMP" property="reservationReserverCreditCardExpirationDate" />
+	    <result column="reservation_reserver_credit_card_cvv" jdbcType="VARCHAR" property="reservationReserverCreditCardCvv" />
+	    <result column="reservation_reserver_credit_card_create_time" jdbcType="TIMESTAMP" property="reservationReserverCreditCardCreateTime" />
+	    <result column="reservation_reserver_credit_card_update_time" jdbcType="TIMESTAMP" property="reservationReserverCreditCardUpdateTime" />
+	    <result column="reservation_reserver_facebook_url" jdbcType="VARCHAR" property="reservationReserverFacebookUrl" />
+	    <result column="reservation_reserver_instagram_url" jdbcType="VARCHAR" property="reservationReserverInstagramUrl" />
+	    <result column="reservation_reserver_twitter_url" jdbcType="VARCHAR" property="reservationReserverTwitterUrl" />
+	    <result column="reservation_reserver_create_time" jdbcType="TIMESTAMP" property="reservationReserverCreateTime" />
+	    <result column="reservation_reserver_update_time" jdbcType="TIMESTAMP" property="reservationReserverUpdateTime" />
+	    <result column="reservation_check_in_time" jdbcType="TIMESTAMP" property="reservationCheckInTime" />
+	    <result column="reservation_check_out_time" jdbcType="TIMESTAMP" property="reservationCheckOutTime" />
+	    <result column="reservation_guest_number" jdbcType="INTEGER" property="reservationGuestNumber" />
+	    <result column="reservation_fee" jdbcType="INTEGER" property="reservationFee" />
+	    <result column="reservation_create_time" jdbcType="TIMESTAMP" property="reservationCreateTime" />
+	    <result column="reservation_update_time" jdbcType="TIMESTAMP" property="reservationUpdateTime" />
+		
+        <result column="review" jdbcType="VARCHAR" property="review" />
+        <result column="clean_score" jdbcType="INTEGER" property="cleanScore" />
+        <result column="service_score" jdbcType="INTEGER" property="serviceScore" />
+        <result column="facility_score" jdbcType="INTEGER" property="facilityScore" />
+        <result column="location_score" jdbcType="INTEGER" property="locationScore" />
+        <result column="fee_score" jdbcType="INTEGER" property="feeScore" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+	</resultMap>
+	<select id="selectAll" resultMap="ReservationReviewCustomResultMap">
+        SELECT
+            review.id id,
+            reservation.id reservation_id,
+            reservation_inn.id reservation_inn_id,
+            reservation_inn_user.id reservation_inn_user_id,
+            reservation_inn_user.image_url reservation_inn_user_image_url,
+            reservation_inn_user.name reservation_inn_user_name,
+            reservation_inn_user.description reservation_inn_user_description,
+            reservation_inn_user.address reservation_inn_user_address,
+            reservation_inn_user.occupation reservation_inn_user_occupation,
+            reservation_inn_user.phone_number reservation_inn_user_phone_number,
+            reservation_inn_user.mail reservation_inn_user_mail,
+            reservation_inn_user_credit_card.id reservation_inn_user_credit_card_id,
+            reservation_inn_user_credit_card.card_number reservation_inn_user_credit_card_card_number,
+            reservation_inn_user_credit_card.expiration_date reservation_inn_user_credit_card_expiration_date,
+            reservation_inn_user_credit_card.cvv reservation_inn_user_credit_card_cvv,
+            reservation_inn_user_credit_card.create_time reservation_inn_user_credit_card_create_time,
+            reservation_inn_user_credit_card.update_time reservation_inn_user_credit_card_update_time,
+            reservation_inn_user.facebook_url reservation_inn_user_facebook_url,
+            reservation_inn_user.instagram_url reservation_inn_user_instagram_url,
+            reservation_inn_user.twitter_url reservation_inn_user_twitter_url,
+            reservation_inn_user.create_time reservation_inn_user_create_time,
+            reservation_inn_user.update_time reservation_inn_user_update_time,
+            reservation_inn.name reservation_inn_name,
+            reservation_inn.description reservation_inn_description,
+            reservation_inn.fee reservation_inn_fee,
+            reservation_inn_status.id reservation_inn_status_id,
+            reservation_inn_status.name reservation_inn_status_name,
+            reservation_inn_type.id reservation_inn_type_id,
+            reservation_inn_type.name reservation_inn_type_name,
+            reservation_inn.address reservation_inn_address,
+            reservation_inn.guest_number reservation_inn_guest_number,
+            reservation_inn.bedroom_number reservation_inn_bedroom_number,
+            reservation_inn.bed_number reservation_inn_bed_number,
+            reservation_inn.bathroom_number reservation_inn_bathroom_number,
+            reservation_inn.create_time reservation_inn_create_time,
+            reservation_inn.update_time reservation_inn_update_time,
+            reservation_status.id reservation_status_id,
+            reservation_status.name reservation_status_name,
+            reservation_reserver.id reservation_reserver_id,
+            reservation_reserver.image_url reservation_reserver_image_url,
+            reservation_reserver.name reservation_reserver_name,
+            reservation_reserver.description reservation_reserver_description,
+            reservation_reserver.address reservation_reserver_address,
+            reservation_reserver.occupation reservation_reserver_occupation,
+            reservation_reserver.phone_number reservation_reserver_phone_number,
+            reservation_reserver.mail reservation_reserver_mail,
+            reservation_reserver_credit_card.id reservation_reserver_credit_card_id,
+            reservation_reserver_credit_card.card_number reservation_reserver_credit_card_card_number,
+            reservation_reserver_credit_card.expiration_date reservation_reserver_credit_card_expiration_date,
+            reservation_reserver_credit_card.cvv reservation_reserver_credit_card_cvv,
+            reservation_reserver_credit_card.create_time reservation_reserver_credit_card_create_time,
+            reservation_reserver_credit_card.update_time reservation_reserver_credit_card_update_time,
+            reservation_reserver.facebook_url reservation_reserver_facebook_url,
+            reservation_reserver.instagram_url reservation_reserver_instagram_url,
+            reservation_reserver.twitter_url reservation_reserver_twitter_url,
+            reservation_reserver.create_time reservation_reserver_create_time,
+            reservation_reserver.update_time reservation_reserver_update_time,
+            reservation.check_in_time reservation_check_in_time,
+            reservation.check_out_time reservation_check_out_time,
+            reservation.guest_number reservation_guest_number,
+            reservation.fee reservation_fee,
+            reservation.create_time reservation_create_time,
+            reservation.update_time reservation_update_time,
+
+            review.review,
+            review.clean_score,
+            review.service_score,
+            review.facility_score,
+            review.location_score,
+            review.fee_score,
+            review.create_time,
+            review.update_time
+        FROM
+            `reservation_review` review
+            LEFT JOIN `reservation_reservation` reservation ON reservation.id = review.reservation_id
+            LEFT JOIN `inn_inn` reservation_inn ON reservation.inn_id = reservation_inn.id
+            LEFT JOIN `user_user` reservation_inn_user ON reservation_inn.user_id = reservation_inn_user.id
+            LEFT JOIN `user_credit_card` reservation_inn_user_credit_card ON reservation_inn_user.credit_card_id = reservation_inn_user_credit_card.id
+            LEFT JOIN `inn_status` reservation_inn_status ON reservation_inn.status_id = reservation_inn_status.id
+            LEFT JOIN `inn_type` reservation_inn_type ON reservation_inn.type_id = reservation_inn_type.id
+            LEFT JOIN `reservation_status` reservation_status ON reservation.status_id = reservation_status.id
+            LEFT JOIN `user_user` reservation_reserver ON reservation.reserver_id = reservation_reserver.id
+            LEFT JOIN `user_credit_card` reservation_reserver_credit_card ON reservation_reserver.credit_card_id = reservation_reserver_credit_card.id
+        WHERE
+            review.delete_flag = 0
+			AND reservation.delete_flag = 0
+			AND reservation_inn.delete_flag = 0
+			AND reservation_inn_user.delete_flag = 0
+			AND reservation_inn_user_credit_card.delete_flag = 0
+			AND reservation_reserver.delete_flag = 0
+			AND reservation_reserver_credit_card.delete_flag = 0
+    </select>
+</mapper>

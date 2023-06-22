@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "minio.endpoint",
+    "type": "java.lang.String",
+    "description": "A description for 'minio.endpoint'"
+  },
+  {
+    "name": "minio.bucketName",
+    "type": "java.lang.String",
+    "description": "A description for 'minio.bucketName'"
+  },
+  {
+    "name": "minio.accessKey",
+    "type": "java.lang.String",
+    "description": "A description for 'minio.accessKey'"
+  },
+  {
+    "name": "minio.secretKey",
+    "type": "java.lang.String",
+    "description": "A description for 'minio.secretKey'"
+  },
+  {
+    "name": "testdb.url",
+    "type": "java.lang.String",
+    "description": "A description for 'testdb.url'"
+  },
+  {
+    "name": "testdb.user",
+    "type": "java.lang.String",
+    "description": "A description for 'testdb.user'"
+  },
+  {
+    "name": "testdb.password",
+    "type": "java.lang.String",
+    "description": "A description for 'testdb.password'"
+  }
+]}

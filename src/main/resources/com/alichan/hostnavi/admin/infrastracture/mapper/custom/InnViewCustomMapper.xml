@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alichan.hostnavi.admin.infrastracture.mapper.custom.InnViewCustomMapper">
+    <resultMap id="InnViewCustomResultMap" type="com.alichan.hostnavi.admin.infrastracture.model.custom.InnViewCustom">
+	    <id column="id" jdbcType="BIGINT" property="id" />
+        <id column="inn_id" jdbcType="BIGINT" property="innId" />
+	    <result column="inn_user_id" jdbcType="BIGINT" property="innUserId" />
+	    <result column="inn_user_image_url" jdbcType="VARCHAR" property="innUserImageUrl" />
+	    <result column="inn_user_name" jdbcType="VARCHAR" property="innUserName" />
+	    <result column="inn_user_description" jdbcType="VARCHAR" property="innUserDescription" />
+	    <result column="inn_user_address" jdbcType="VARCHAR" property="innUserAddress" />
+	    <result column="inn_user_occupation" jdbcType="VARCHAR" property="innUserOccupation" />
+	    <result column="inn_user_phone_number" jdbcType="VARCHAR" property="innUserPhoneNumber" />
+	    <result column="inn_user_mail" jdbcType="VARCHAR" property="innUserMail" />
+	    <result column="inn_user_credit_card_id" jdbcType="BIGINT" property="innUserCreditCardId" />
+	    <result column="inn_user_credit_card_card_number" jdbcType="VARCHAR" property="innUserCreditCardCardNumber" />
+	    <result column="inn_user_credit_card_expiration_date" jdbcType="TIMESTAMP" property="innUserCreditCardExpirationDate" />
+	    <result column="inn_user_credit_card_cvv" jdbcType="VARCHAR" property="innUserCreditCardCvv" />
+	    <result column="inn_user_credit_card_create_time" jdbcType="TIMESTAMP" property="innUserCreditCardCreateTime" />
+	    <result column="inn_user_credit_card_update_time" jdbcType="TIMESTAMP" property="innUserCreditCardUpdateTime" />
+	    <result column="inn_user_facebook_url" jdbcType="VARCHAR" property="innUserFacebookUrl" />
+	    <result column="inn_user_instagram_url" jdbcType="VARCHAR" property="innUserInstagramUrl" />
+	    <result column="inn_user_twitter_url" jdbcType="VARCHAR" property="innUserTwitterUrl" />
+	    <result column="inn_user_create_time" jdbcType="TIMESTAMP" property="innUserCreateTime" />
+	    <result column="inn_user_update_time" jdbcType="TIMESTAMP" property="innUserUpdateTime" />
+	    <result column="inn_name" jdbcType="VARCHAR" property="innName" />
+	    <result column="inn_description" jdbcType="VARCHAR" property="innDescription" />
+	    <result column="inn_fee" jdbcType="INTEGER" property="innFee" />
+	    <result column="inn_status_id" jdbcType="INTEGER" property="innStatusId" />
+	    <result column="inn_status_name" jdbcType="VARCHAR" property="innStatusName" />
+	    <result column="inn_type_id" jdbcType="INTEGER" property="innTypeId" />
+	    <result column="inn_type_name" jdbcType="VARCHAR" property="innTypeName" />
+	    <result column="inn_address" jdbcType="VARCHAR" property="innAddress" />
+	    <result column="inn_guest_number" jdbcType="INTEGER" property="innGuestNumber" />
+	    <result column="inn_bedroom_number" jdbcType="INTEGER" property="innBedroomNumber" />
+	    <result column="inn_bed_number" jdbcType="INTEGER" property="innBedNumber" />
+	    <result column="inn_bathroom_number" jdbcType="INTEGER" property="innBathroomNumber" />
+	    <result column="inn_create_time" jdbcType="TIMESTAMP" property="innCreateTime" />
+	    <result column="inn_update_time" jdbcType="TIMESTAMP" property="innUpdateTime" />
+        <result column="viewer_id" jdbcType="BIGINT" property="viewerId" />
+	    <result column="viewer_image_url" jdbcType="VARCHAR" property="viewerImageUrl" />
+	    <result column="viewer_name" jdbcType="VARCHAR" property="viewerName" />
+	    <result column="viewer_description" jdbcType="VARCHAR" property="viewerDescription" />
+	    <result column="viewer_address" jdbcType="VARCHAR" property="viewerAddress" />
+	    <result column="viewer_occupation" jdbcType="VARCHAR" property="viewerOccupation" />
+	    <result column="viewer_phone_number" jdbcType="VARCHAR" property="viewerPhoneNumber" />
+	    <result column="viewer_mail" jdbcType="VARCHAR" property="viewerMail" />
+	    <result column="viewer_credit_card_id" jdbcType="BIGINT" property="viewerCreditCardId" />
+	    <result column="viewer_credit_card_card_number" jdbcType="VARCHAR" property="viewerCreditCardCardNumber" />
+	    <result column="viewer_credit_card_expiration_date" jdbcType="TIMESTAMP" property="viewerCreditCardExpirationDate" />
+	    <result column="viewer_credit_card_cvv" jdbcType="VARCHAR" property="viewerCreditCardCvv" />
+	    <result column="viewer_credit_card_create_time" jdbcType="TIMESTAMP" property="viewerCreditCardCreateTime" />
+	    <result column="viewer_credit_card_update_time" jdbcType="TIMESTAMP" property="viewerCreditCardUpdateTime" />
+	    <result column="viewer_facebook_url" jdbcType="VARCHAR" property="viewerFacebookUrl" />
+	    <result column="viewer_instagram_url" jdbcType="VARCHAR" property="viewerInstagramUrl" />
+	    <result column="viewer_twitter_url" jdbcType="VARCHAR" property="viewerTwitterUrl" />
+	    <result column="viewer_create_time" jdbcType="TIMESTAMP" property="viewerCreateTime" />
+	    <result column="viewer_update_time" jdbcType="TIMESTAMP" property="viewerUpdateTime" />
+	    <result column="page_id" jdbcType="INTEGER" property="pageId" />
+	    <result column="page_name" jdbcType="VARCHAR" property="pageName" />
+	    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+    <select id="selectAll" resultMap="InnViewCustomResultMap">
+        SELECT
+            view.id id,
+            inn.id inn_id,
+            inn_user.id inn_user_id,
+            inn_user.image_url inn_user_image_url,
+            inn_user.name inn_user_name,
+            inn_user.description inn_user_description,
+            inn_user.address inn_user_address,
+            inn_user.occupation inn_user_occupation,
+            inn_user.phone_number inn_user_phone_number,
+            inn_user.mail inn_user_mail,
+            inn_user_credit_card.id inn_user_credit_card_id,
+            inn_user_credit_card.card_number inn_user_credit_card_card_number,
+            inn_user_credit_card.expiration_date inn_user_credit_card_expiration_date,
+            inn_user_credit_card.cvv inn_user_credit_card_cvv,
+            inn_user_credit_card.create_time inn_user_credit_card_create_time,
+            inn_user_credit_card.update_time inn_user_credit_card_update_time,
+            inn_user.facebook_url inn_user_facebook_url,
+            inn_user.instagram_url inn_user_instagram_url,
+            inn_user.twitter_url inn_user_twitter_url,
+            inn_user.create_time inn_user_create_time,
+            inn_user.update_time inn_user_update_time,
+            inn.name inn_name,
+            inn.description inn_description,
+            inn.fee inn_fee,
+            inn_status.id inn_status_id,
+            inn_status.name inn_status_name,
+            inn_type.id inn_type_id,
+            inn_type.name inn_type_name,
+            inn.address inn_address,
+            inn.guest_number inn_guest_number,
+            inn.bedroom_number inn_bedroom_number,
+            inn.bed_number inn_bed_number,
+            inn.bathroom_number inn_bathroom_number,
+            inn.create_time inn_create_time,
+            inn.update_time inn_update_time,
+            viewer.id viewer_id,
+            viewer.image_url viewer_image_url,
+            viewer.name viewer_name,
+            viewer.description viewer_description,
+            viewer.address viewer_address,
+            viewer.occupation viewer_occupation,
+            viewer.phone_number viewer_phone_number,
+            viewer.mail viewer_mail,
+            viewer_credit_card.id viewer_credit_card_id,
+            viewer_credit_card.card_number viewer_credit_card_card_number,
+            viewer_credit_card.expiration_date viewer_credit_card_expiration_date,
+            viewer_credit_card.cvv viewer_credit_card_cvv,
+            viewer_credit_card.create_time viewer_credit_card_create_time,
+            viewer_credit_card.update_time viewer_credit_card_update_time,
+            viewer.facebook_url viewer_facebook_url,
+            viewer.instagram_url viewer_instagram_url,
+            viewer.twitter_url viewer_twitter_url,
+            viewer.create_time viewer_create_time,
+            viewer.update_time viewer_update_time,
+            page.id page_id,
+            page.name page_name,
+            view.create_time create_time
+        FROM
+            `inn_view` view
+            LEFT JOIN `inn_inn` inn ON view.inn_id = inn.id
+            LEFT JOIN `user_user` inn_user ON inn.user_id = inn_user.id
+            LEFT JOIN `user_credit_card` inn_user_credit_card ON inn_user.credit_card_id = inn_user_credit_card.id
+            LEFT JOIN `inn_status` inn_status ON inn.status_id = inn_status.id
+            LEFT JOIN `inn_type` inn_type ON inn.type_id = inn_type.id
+            LEFT JOIN `user_user` viewer ON view.viewer_id = viewer.id
+            LEFT JOIN `user_credit_card` viewer_credit_card ON viewer.credit_card_id = viewer_credit_card.id
+            LEFT JOIN `inn_page` page ON view.page_id = page.id
+        WHERE
+            view.delete_flag = 0
+            AND inn.delete_flag = 0
+            AND inn_user.delete_flag = 0
+            AND inn_user_credit_card.delete_flag = 0
+            AND viewer.delete_flag = 0
+            AND viewer_credit_card.delete_flag = 0
+        <if test="ownerId != null">
+            AND inn_user.id = #{ownerId}
+        </if>
+        <if test="createTimeAfter != null">
+            AND view.create_time >= #{createTimeAfter}
+        </if>
+        <if test="createTimeBefore != null">
+            AND view.create_time <![CDATA[<=]]> #{createTimeBefore}
+        </if>
+    </select>
+</mapper>

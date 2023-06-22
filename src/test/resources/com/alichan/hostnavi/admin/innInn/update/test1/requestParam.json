@@ -1,0 +1,21 @@
+{
+	"address": "東京都新宿区",
+	"amenityIdList": [
+		3,
+		4
+	],
+	"bathroomNumber": 2,
+	"bedNumber": 2,
+	"bedroomNumber": 2,
+	"description": "微妙な宿です。",
+	"facilityIdList": [
+		3,
+		4
+	],
+	"fee": 2000,
+	"guestNumber": 2,
+	"name": "木の家",
+	"statusId": 2,
+	"typeId": 2,
+	"userId": 2
+}

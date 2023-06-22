@@ -1,0 +1,3 @@
+"id","image_url","name","description","address","occupation","phone_number","mail","password","credit_card_id","facebook_url","instagram_url","twitter_url","create_time","update_time","delete_flag"
+1,"http://localhost:8080","山田太郎","素敵な人です。","神奈川県横浜市","エンジニア","01234567890","sample@sample.com","0123456789",1,"http://localhost:8080","http://localhost:8080","http://localhost:8080","2023-01-01 00:00:00","2023-01-01 00:00:00",0
+2,"http://localhost:8080","山田花子","素敵な人です。","神奈川県横浜市","エンジニア","01234567891","sample2@sample.com","0123456789",2,"http://localhost:8080","http://localhost:8080","http://localhost:8080","2023-01-01 00:00:00","2023-01-01 00:00:00",0

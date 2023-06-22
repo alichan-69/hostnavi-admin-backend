@@ -1,0 +1,2 @@
+"id","user_id","name","description","fee","status_id","type_id","address","guest_number","bedroom_number","bed_number","bathroom_number","delete_flag"
+1,1,"石の家","素敵な宿です。",1000,1,1,"神奈川県横浜市",1,1,1,1,0

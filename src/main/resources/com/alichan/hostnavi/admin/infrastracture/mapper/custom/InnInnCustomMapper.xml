@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alichan.hostnavi.admin.infrastracture.mapper.custom.InnInnCustomMapper">
+    <resultMap id="InnInnCustomResultMap" type="com.alichan.hostnavi.admin.infrastracture.model.custom.InnInnCustom">
+	    <id column="id" jdbcType="BIGINT" property="id" />
+	    <result column="user_id" jdbcType="BIGINT" property="userId" />
+	    <result column="user_image_url" jdbcType="VARCHAR" property="userImageUrl" />
+	    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+	    <result column="user_description" jdbcType="VARCHAR" property="userDescription" />
+	    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+	    <result column="user_occupation" jdbcType="VARCHAR" property="userOccupation" />
+	    <result column="user_phone_number" jdbcType="VARCHAR" property="userPhoneNumber" />
+	    <result column="user_mail" jdbcType="VARCHAR" property="userMail" />
+	    <result column="credit_card_id" jdbcType="BIGINT" property="creditCardId" />
+	    <result column="credit_card_card_number" jdbcType="VARCHAR" property="creditCardCardNumber" />
+	    <result column="credit_card_expiration_date" jdbcType="TIMESTAMP" property="creditCardExpirationDate" />
+	    <result column="credit_card_cvv" jdbcType="VARCHAR" property="creditCardCvv" />
+	    <result column="credit_card_create_time" jdbcType="TIMESTAMP" property="creditCardCreateTime" />
+	    <result column="credit_card_update_time" jdbcType="TIMESTAMP" property="creditCardUpdateTime" />
+	    <result column="user_facebook_url" jdbcType="VARCHAR" property="userFacebookUrl" />
+	    <result column="user_instagram_url" jdbcType="VARCHAR" property="userInstagramUrl" />
+	    <result column="user_twitter_url" jdbcType="VARCHAR" property="userTwitterUrl" />
+	    <result column="user_create_time" jdbcType="TIMESTAMP" property="userCreateTime" />
+	    <result column="user_update_time" jdbcType="TIMESTAMP" property="userUpdateTime" />
+	    <result column="name" jdbcType="VARCHAR" property="name" />
+	    <result column="description" jdbcType="VARCHAR" property="description" />
+	    <result column="fee" jdbcType="INTEGER" property="fee" />
+	    <result column="status_id" jdbcType="INTEGER" property="statusId" />
+	    <result column="status_name" jdbcType="VARCHAR" property="statusName" />
+	    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+	    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+	    <result column="address" jdbcType="VARCHAR" property="address" />
+	    <result column="guest_number" jdbcType="INTEGER" property="guestNumber" />
+	    <result column="bedroom_number" jdbcType="INTEGER" property="bedroomNumber" />
+	    <result column="bed_number" jdbcType="INTEGER" property="bedNumber" />
+	    <result column="bathroom_number" jdbcType="INTEGER" property="bathroomNumber" />
+	    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <select id="selectAll" resultMap="InnInnCustomResultMap">
+        SELECT
+            inn.id,
+            user.id user_id,
+            user.image_url user_image_url,
+            user.name user_name,
+            user.description user_description,
+            user.address user_address,
+            user.occupation user_occupation,
+            user.phone_number user_phone_number,
+            user.mail user_mail,
+            credit_card.id credit_card_id,
+            credit_card.card_number credit_card_card_number,
+            credit_card.expiration_date credit_card_expiration_date,
+            credit_card.cvv credit_card_cvv,
+            credit_card.create_time credit_card_create_time,
+            credit_card.update_time credit_card_update_time,
+            user.facebook_url user_facebook_url,
+            user.instagram_url user_instagram_url,
+            user.twitter_url user_twitter_url,
+            user.create_time user_create_time,
+            user.update_time user_update_time,
+            inn.name,
+            inn.description,
+            inn.fee,
+            status.id status_id,
+            status.name status_name,
+            type.id type_id,
+            type.name type_name,
+            inn.address,
+            inn.guest_number,
+            inn.bedroom_number,
+            inn.bed_number,
+            inn.bathroom_number,
+            inn.create_time,
+            inn.update_time
+        FROM
+            `inn_inn` inn
+            LEFT JOIN `user_user` user ON inn.user_id = user.id
+            LEFT JOIN `inn_status` status ON inn.status_id = status.id
+            LEFT JOIN `inn_type` type ON inn.type_id = type.id
+            LEFT JOIN `user_credit_card` credit_card ON user.credit_card_id = credit_card.id
+        WHERE
+            inn.delete_flag = 0
+            AND credit_card.delete_flag = 0
+            AND user.delete_flag = 0
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="InnInnCustomResultMap">
+        SELECT
+            inn.id,
+            user.id user_id,
+            user.image_url user_image_url,
+            user.name user_name,
+            user.description user_description,
+            user.address user_address,
+            user.occupation user_occupation,
+            user.phone_number user_phone_number,
+            user.mail user_mail,
+            credit_card.id credit_card_id,
+            credit_card.card_number credit_card_card_number,
+            credit_card.expiration_date credit_card_expiration_date,
+            credit_card.cvv credit_card_cvv,
+            credit_card.create_time credit_card_create_time,
+            credit_card.update_time credit_card_update_time,
+            user.facebook_url user_facebook_url,
+            user.instagram_url user_instagram_url,
+            user.twitter_url user_twitter_url,
+            user.create_time user_create_time,
+            user.update_time user_update_time,
+            inn.name,
+            inn.description,
+            inn.fee,
+            status.id status_id,
+            status.name status_name,
+            type.id type_id,
+            type.name type_name,
+            inn.address,
+            inn.guest_number,
+            inn.bedroom_number,
+            inn.bed_number,
+            inn.bathroom_number,
+            inn.create_time,
+            inn.update_time
+        FROM
+            `inn_inn` inn
+            LEFT JOIN `user_user` user ON inn.user_id = user.id
+            LEFT JOIN `inn_status` status ON inn.status_id = status.id
+            LEFT JOIN `inn_type` type ON inn.type_id = type.id
+            LEFT JOIN `user_credit_card` credit_card ON user.credit_card_id = credit_card.id
+        WHERE
+            inn.id = #{id,jdbcType=BIGINT}
+            AND inn.delete_flag = 0
+            AND credit_card.delete_flag = 0
+            AND user.delete_flag = 0
+    </select>
+    <select id="selectByUserId" parameterType="java.lang.Long" resultMap="InnInnCustomResultMap">
+        SELECT
+            inn.id,
+            user.id user_id,
+            user.image_url user_image_url,
+            user.name user_name,
+            user.description user_description,
+            user.address user_address,
+            user.occupation user_occupation,
+            user.phone_number user_phone_number,
+            user.mail user_mail,
+            credit_card.id credit_card_id,
+            credit_card.card_number credit_card_card_number,
+            credit_card.expiration_date credit_card_expiration_date,
+            credit_card.cvv credit_card_cvv,
+            credit_card.create_time credit_card_create_time,
+            credit_card.update_time credit_card_update_time,
+            user.facebook_url user_facebook_url,
+            user.instagram_url user_instagram_url,
+            user.twitter_url user_twitter_url,
+            user.create_time user_create_time,
+            user.update_time user_update_time,
+            inn.name,
+            inn.description,
+            inn.fee,
+            status.id status_id,
+            status.name status_name,
+            type.id type_id,
+            type.name type_name,
+            inn.address,
+            inn.guest_number,
+            inn.bedroom_number,
+            inn.bed_number,
+            inn.bathroom_number,
+            inn.create_time,
+            inn.update_time
+        FROM
+            `inn_inn` inn
+            LEFT JOIN `user_user` user ON inn.user_id = user.id
+            LEFT JOIN `inn_status` status ON inn.status_id = status.id
+            LEFT JOIN `inn_type` type ON inn.type_id = type.id
+            LEFT JOIN `user_credit_card` credit_card ON user.credit_card_id = credit_card.id
+        WHERE
+            inn.user_id = #{userId,jdbcType=BIGINT}
+            AND inn.delete_flag = 0
+            AND credit_card.delete_flag = 0
+    </select>
+</mapper>
