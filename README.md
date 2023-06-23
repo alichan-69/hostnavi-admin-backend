@@ -185,6 +185,8 @@ Springfox では自動生成された API 仕様書では API の仕様の閲覧
 
 1. コントローラークラスにアノテーションを付与し、API の説明を記載
 
+<b>src/main/java/com.alichan.hostnavi.admin.application.controller.InnInnController.java</b>
+
 ```Java
 // 1. エンドポイントに対応するAPIの大項目名、説明を記載
 @Api(tags = "宿泊施設API", description = "宿泊施設のCRUD処理ができるAPI")
@@ -226,6 +228,8 @@ public class InnInnController {
 実装方法は以下です。
 
 1. `WebSecurityConfig`クラスで認証の設定を行う。
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.auth.WebSecurityConfig.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
@@ -290,6 +294,8 @@ public class WebSecurityConfig {
 ```
 
 2. `JWTAuthenticationFilter`クラスで、JWT 認証用の認証クラスを定義する。
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.auth.JWTAuthenticationFilter.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
@@ -368,6 +374,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 3. `JWTAuthorizationFileter`クラスで認可用の認可クラスを作成する。
 
+<b>src/main/java/com.alichan.hostnavi.admin.application.auth.JWTAuthorizationFileter.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
 
@@ -409,6 +417,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 ```
 
 4. `AuthUserService`クラスでデータベースに接続してメールアドレスでユーザーを検索、認証されたユーザーの情報を返す。
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.auth.AuthUserService.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
@@ -452,6 +462,8 @@ public class AuthUserService implements UserDetailsService {
 
 1. `MessageMapping`アノテーションを付与したコントローラークラスを用意し、WebSocket 通信での受け口を確立する。<br>
    受け取ったリクエストパラメータに応じて、サービスクラスを紐づける。
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.controller.ReservationMessageController.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.controller;
@@ -522,6 +534,8 @@ minio:
 ```
 
 2. `ImageLogic`クラスで、画像を保存する処理を実装
+
+<b>src/main/java/com.alichan.hostnavi.admin.domain.logic.ImageLogic.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.domain.logic;
@@ -609,6 +623,8 @@ public class ImageLogic {
 
 3. 上記クラスで作成した`createObject`メソッドや`deleteObject`メソッドを実際にサービスクラスで使用する。
 
+<b>src/main/java/com.alichan.hostnavi.admin.domain.service.InnInnService.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.domain.service;
 
@@ -648,6 +664,8 @@ public class InnInnService {
 
 1. バリデーションを実行するクラスを`ConstraintValidator`を拡張して作成する
 
+<b>src/main/java/com.alichan.hostnavi.admin.application.validation.validator.LongTypeValidator.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.application.validation.validator;
 
@@ -665,6 +683,8 @@ public class LongTypeValidator implements ConstraintValidator<LongType, Long> {
 ```
 
 2. バリデーションに対応するアノテーションを作成する
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.validation.annotation.LongType.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.validation.annotation;
@@ -696,6 +716,8 @@ public @interface LongType {
 - リクエストパラメータへのバリデーション実装方法
 
 1. リクエストパラメータを格納する DTO 内の各フィールド変数にバリデーション用のアノテーションを付与する
+
+<b>src/main/java/com.alichan.hostnavi.admin.dto.requestparam.InnInnRequestParam.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.dto.requestparam;
@@ -736,6 +758,8 @@ public class InnInnRequestParam {
 
 2. コントローラークラスでリクエストパラメータを受け取る引数の前に、`@Validated`アノテーションを付与する
 
+<b>src/main/java/com.alichan.hostnavi.admin.application.controller.InnInnController.java</b>
+
 ```Java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -772,6 +796,8 @@ public class InnInnController {
 
 1. `additional-spring-configuration-metadata.json`に追加で設定する環境変数を設定
 
+<b>src/main/resources/META-INF/additional-spring-configuration-metadata.json</b>
+
 ```json
 {
   "properties": [
@@ -799,9 +825,11 @@ public class InnInnController {
 }
 ```
 
-1. `application.yaml`で環境変数を設定
+2. `application.yml`で環境変数を設定
 
-```yaml
+<b>src/main/resources/application.yml</b>
+
+```yml
 minio:
   endpoint: http://localhost:9000
   bucketName: image
@@ -809,7 +837,9 @@ minio:
   secretKey: alichan0609
 ```
 
-2. 環境変数をフィールド変数に紐づけて使用する
+3. 環境変数をフィールド変数に紐づけて使用する
+
+<b>src/main/java/com.alichan.hostnavi.admin.domain.logic.ImageLogic.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.domain.logic;
@@ -847,6 +877,8 @@ public class ImageLogic {
 実装方法は以下です。
 
 1. 各 HTTP ステータスに対応するエラー時に発生するレスポンスを返すメソッドを定義する
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.response.Response.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.response;
@@ -910,6 +942,8 @@ public class Response<T> {
 
 2. 各エラー時の HTTP ステータスに対応するエラーを作成する<br>
 
+<b>src/main/java/com.alichan.hostnavi.admin.error.exception.FailValidationException.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.error.exception;
 
@@ -932,6 +966,8 @@ public class FailValidationException extends RuntimeException {
 ```
 
 3. 各エラーを呼び出せる関数を作成する
+
+<b>src/main/java/com.alichan.hostnavi.admin.error.Assert.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.error;
@@ -990,6 +1026,8 @@ public class Assert {
 ```
 
 4. 各エラーをキャッチした際に API で対応するエラーレスポンスを返す様に設定する
+
+<b>src/main/java/com.alichan.hostnavi.admin.error.GlobalExceptionHandler.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.error;
@@ -1077,6 +1115,8 @@ public class GlobalExceptionHandler {
 
 1. `generator.properties`ファイルで`generatorConfig.xml`に設定する MySQL への接続情報などを記載する
 
+<b>src/main/resources/generator.properties</b>
+
 ```proerties
 jdbc.driverClass=com.mysql.cj.jdbc.Driver
 jdbc.connectionURL=jdbc:mysql://localhost:3306/hostnavi?allowPublicKeyRetrieval=true&useSSL=false
@@ -1085,6 +1125,8 @@ jdbc.password=root
 ```
 
 2. `generatorConfig.xml`で CRUD 処理を行うメソッドを生成する対象のデータベースへの接続情報、対象のテーブル情報等を設定する
+
+<b>src/main/resources/generatorConfig.xml</b>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1163,6 +1205,8 @@ jdbc.password=root
 
 3. `Generator`クラスで CRUD メソッドを生成するための設定を行う
 
+<b>src/main/java/com.alichan.hostnavi.admin.infrastracture.Generator.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.infrastracture;
 
@@ -1206,6 +1250,8 @@ public class Generator {
 
 1. SQL を xml ファイル内に書いて、紐づくメソッドと返すモデルを設定する
 
+<b>src/main/resources/generatorConfig.xml</b>
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -1245,6 +1291,8 @@ public class Generator {
 
 2. SQL を紐づけるメソッドを格納するマッパーインターフェースを作成する
 
+<b>src/main/java/com.alichan.hostnavi.admin.infrastracture.mapper.custom.ReservationMessageCustomMapper.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin.infrastracture.mapper.custom;
 
@@ -1258,6 +1306,8 @@ public interface ReservationMessageCustomMapper {
 ```
 
 3. SQL から返される結果を格納するモデルクラスを作成する
+
+<b>src/main/java/com.alichan.hostnavi.admin.infrastracture.model.custom.ReservationMessageCustom.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.infrastracture.model.custom;
@@ -1280,6 +1330,8 @@ public class ReservationMessageCustom {
 ```
 
 4. 実際にサービスクラス内でカスタムメソッドを使用する
+
+<b>src/main/java/com.alichan.hostnavi.admin.domain.service.ReservationMessageService.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.domain.service;
@@ -1323,6 +1375,8 @@ public class ReservationMessageService {
 
 2. csv ファイルでデータベースのデータのセットや確認が行える様に設定する`CsvDataSetLoader`クラスを作成する
 
+<b>src/test/java/com.alichan.hostnavi.admin.CsvDataSetLoader.java</b>
+
 ```Java
 package com.alichan.hostnavi.admin;
 
@@ -1342,6 +1396,8 @@ public class CsvDataSetLoader extends AbstractDataSetLoader {
 ```
 
 3. テスト時に必要なメソッドを格納した`Util`クラスを作成する
+
+<b>src/test/java/com.alichan.hostnavi.admin.Util.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin;
@@ -1410,7 +1466,11 @@ public class Util {
 
 4. データベースに初期データをセットするための csv ファイルとテスト後のデータを確認するための csv ファイル、データベースにデータを設定する順番を記載した table-ordering.txt ファイルを作成する
 
+以下ファイルは全て`src/test/resources/com/alichan/hostnavi/admin/innInn/create/test1`配下に格納されているため、それまでのパスを省略、記載しているパスは全てそれ以降のパスとする
+
 - テスト前のデータベースの状態を設定する csv ファイルとデータベースにデータを設定する順番を記載した table-ordering.txt ファイル
+
+<b>database/setUp/user_credit_card.csv</b>
 
 ```csv
 "id","card_number","expiration_date","cvv","create_time","update_time","delete_flag"
@@ -1418,16 +1478,22 @@ public class Util {
 
 ```
 
+<b>database/setUp/user_user.csv</b>
+
 ```csv
 "id","image_url","name","description","address","occupation","phone_number","mail","password","credit_card_id","facebook_url","instagram_url","twitter_url","create_time","update_time","delete_flag"
 1,"http://localhost:8080","山田太郎","素敵な人です。","神奈川県横浜市","エンジニア","01234567890","sample@sample.com","0123456789",1,"http://localhost:8080","http://localhost:8080","http://localhost:8080","2023-01-01 00:00:00","2023-01-01 00:00:00",0
 
 ```
 
+<b>database/setUp/inn_inn.csv</b>
+
 ```csv
 "id","user_id","name","description","fee","status_id","type_id","address","guest_number","bedroom_number","bed_number","bathroom_number","create_time","update_time","delete_flag"
 
 ```
+
+<b>table-ordering.txt</b>
 
 ```txt
 user_credit_card
@@ -1437,10 +1503,14 @@ inn_inn
 
 - テスト後のデータベースの状態を確認する csv ファイルとデータベースにデータを設定する順番を記載した table-ordering.txt ファイル
 
+<b>database/expected/inn_inn.csv</b>
+
 ```csv
 "id","user_id","name","description","fee","status_id","type_id","address","guest_number","bedroom_number","bed_number","bathroom_number","delete_flag"
 1,1,"石の家","素敵な宿です。",1000,1,1,"神奈川県横浜市",1,1,1,1,0
 ```
+
+<b>database/expected/inn_inn_amenity_relation.csv</b>
 
 ```csv
 "id","inn_id","amenity_id","delete_flag"
@@ -1448,11 +1518,15 @@ inn_inn
 2,1,2,0
 ```
 
+<b>database/expected/inn_inn_facility_relation.csv</b>
+
 ```csv
 "id","inn_id","facility_id","delete_flag"
 1,1,1,0
 2,1,2,0
 ```
+
+<b>database/expected/table-ordering.txt</b>
 
 ```txt
 inn_inn
@@ -1462,7 +1536,11 @@ inn_inn_facility_relation
 
 5. テスト時に実行する API の入力パラメータとして渡す json ファイル、出力として確認する json ファイルを作成する
 
-- 入力パラメータとして私 json ファイル
+以下ファイルは全て`src/test/resources/com/alichan/hostnavi/admin/innInn/create/test1`配下に格納されているため、それまでのパスを省略、記載しているパスは全てそれ以降のパスとする
+
+- 入力パラメータとして渡す json ファイル
+
+<b>requestParam.json</b>
 
 ```json
 {
@@ -1483,6 +1561,8 @@ inn_inn_facility_relation
 ```
 
 - 出力として確認する json ファイル
+
+<b>responseData.json</b>
 
 ```json
 {
@@ -1553,6 +1633,8 @@ inn_inn_facility_relation
 ```
 
 6. 実際の各 API のテストを記載する`InnInnControllerTest`クラスを作成する
+
+`src/test/java/com.alichan.hostnavi.admin.InnInnControllerTest.java`
 
 ```Java
 package com.alichan.hostnavi.admin;
@@ -1652,6 +1734,8 @@ $ ./test-mysql.sh
 ```
 
 4. テストをするために`WebSecurityConfig`クラスで設定している inns 配下のパスにかかっている認証を設定している箇所をコメントアウトすることで外し、認証をせずにリクエストを全て許可する用設定する
+
+<b>src/main/java/com.alichan.hostnavi.admin.application.auth.WebSecurityConfig.java</b>
 
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
