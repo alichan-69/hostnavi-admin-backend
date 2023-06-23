@@ -15,7 +15,7 @@ API は REST で設計されています。<br>
 | ---------------------------------------- | ------------------------------------------------------------------------------------ |
 | 宿泊施設 API                             | 宿泊施設の CRUD 処理ができる API                                                     |
 | 宿泊施設のアメニティ API                 | 宿泊施設のアメニティの CRUD 処理ができる API                                         |
-| 宿泊施設に設置されている施設の API       | 宿泊施設に設置されている施設が取得できる API                                         |
+| 宿泊施設に設置されている施設の API       | 宿泊施設に設置されている施設の CRUD 処理ができる API                                 |
 | 宿泊施設のビュー(掲載ページ閲覧数)の API | 宿泊施設のビュー(掲載ページ閲覧数)の CRUD 処理ができる API                           |
 | 予約 API                                 | 予約の CRUD 処理ができる API                                                         |
 | 予約メッセージ API                       | 予約メッセージの CRUD 処理ができる API(WebScoket 通信でのメメッセージの送受信も含む) |
@@ -164,9 +164,9 @@ API は REST で設計されています。<br>
   - アプリケーション層：API の受け取り部分を担当。ビジネスロジックは書かない。具体的に格納するクラスとしては、入力のバリデーション用クラス、認証関連のクラス、ルーティングを行うコントローラークラス等。
   - ドメイン層：ビジネスロジック(アプリケーション層で行われる処理、またはデータベースとの直接のやり取り以外の処理）を担当。具体的に格納するクラスとしては、ビジネスロジックを定義した関数を格納したサービスクラス等。
   - インフラストラクチャ層：データベースとの直接のやり取りを担当。具体的に格納するクラスとしては、SQL 実行後に実行結果が格納されるモデルクラス、SQL とメソッドの紐付けを行うマッパーインターフェース等。
-- 各層にまたがるパッケージは層のパッケージに入れず、外でパッケージを作成。
+- 各層にまたがる複数のクラスを格納したパッケージは層のパッケージに入れず、外でパッケージを作成。
 - 層の中で関心ごとにパッケージを作成し、クラスを保存。
-- 具体的なディレクトリ構成の例は以下。
+- 具体的なパッケージ構成の例は以下。
 
 ```lua
 ├── application -- アプリケーション層のクラスを格納するパッケージ
@@ -210,7 +210,8 @@ public class InnInnController {
 }
 ```
 
-2. アプリケーションサーバーを立ち上げ、`http://localhost:8080/swagger-ui`にアクセス。以下ページが立ち上がる。
+2. アプリケーションサーバーを立ち上げ、`http://localhost:8080/swagger-ui`にアクセス。以下ページが立ち上がる。<br>
+   上記コントローラークラスでアノテーションを使用しつつ付与した各 API の説明が反映されている。
 
 <img src="./readme/api1.png">
 
@@ -279,7 +280,7 @@ public class WebSecurityConfig {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
 
-  // 7. 認証で使用するauthenticationManagerを設定する処理
+  // 7. 認証で使用するauthenticationManagerを取得、設定する処理
   @Bean
   public AuthenticationManager authenticationManager(
       AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -313,7 +314,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
   public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
     this.authenticationManager = authenticationManager;
-    // 1. ログインパスのを指定する
+    // 1. ログインパスを指定する
     setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/auth/login", "POST"));
 
     // 2. ログイン成功時にtokenを発行してレスポンスヘッダーにセットする
@@ -387,7 +388,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
-    // 1. ヘッダーのキーを指定して値(トークン)を取得する
+    // 1. ヘッダーのキーを指定して値(token)を取得する
     String value = request.getHeader("X-AUTH-TOKEN");
     if (value == null || !value.startsWith("Bearer ")) {
       filterChain.doFilter(request, response);
@@ -640,7 +641,7 @@ public class InnInnService {
 
 ## API リクエスト時のパラメータのバリデーション実装方法
 
-パラメータのバリデーションはリクエストパラメータを格納する dto 内のフィールド変数にアノテーションを付与することで実装しています。<br>
+パラメータのバリデーションはリクエストパラメータを格納する DTO 内のフィールド変数にアノテーションを付与することで実装しています。<br>
 ライブラリが保持していないバリデーションについては、自作してアノテーションでバリデーションを付与できる様にしています。
 
 - 自作バリデーションおよび対応するアノテーションの作成方法
@@ -694,7 +695,7 @@ public @interface LongType {
 
 - リクエストパラメータへのバリデーション実装方法
 
-1. リクエストパラメータを格納する dto 内の各フィールド変数にバリデーション用のアノテーションを付与する
+1. リクエストパラメータを格納する DTO 内の各フィールド変数にバリデーション用のアノテーションを付与する
 
 ```Java
 package com.alichan.hostnavi.admin.dto.requestparam;
@@ -1650,7 +1651,7 @@ $ docker start testmysql8.0
 $ ./test-mysql.sh
 ```
 
-4. テストをするために`WebSecurityConfig`クラスで設定している`inns`配下のパスにかかっている認証を設定している箇所をコメントアウトすることで外し、認証をせずにリクエストを全て許可する用設定する
+4. テストをするために`WebSecurityConfig`クラスで設定している inns 配下のパスにかかっている認証を設定している箇所をコメントアウトすることで外し、認証をせずにリクエストを全て許可する用設定する
 
 ```Java
 package com.alichan.hostnavi.admin.application.auth;
@@ -1678,4 +1679,4 @@ public class WebSecurityConfig {
 }
 ```
 
-5. エクリプスでパッケージ・エクスプローラー配下の`src/test/java`を右クリックし、実行>JUnit テストを押下、テストケースが全て通ればテスト成功
+5. エクリプスでパッケージ・エクスプローラー配下の`src/test/java`を右クリックし、実行 > JUnit テストを押下、テストケースが全て通ればテスト成功
