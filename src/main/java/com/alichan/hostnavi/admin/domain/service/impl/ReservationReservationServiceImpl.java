@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.alichan.hostnavi.admin.domain.logic.ReservationReservationLogic;
+import com.alichan.hostnavi.admin.domain.service.ReservationReservationService;
 import com.alichan.hostnavi.admin.dto.requestparam.ReservationReservationRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.ReservationReservationResponseData;
 import com.alichan.hostnavi.admin.error.Assert;
@@ -19,7 +20,7 @@ import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class ReservationReservationService {
+public class ReservationReservationServiceImpl implements ReservationReservationService {
   @Autowired
   private ReservationReservationMapper reservationReservationMapper;
   @Autowired

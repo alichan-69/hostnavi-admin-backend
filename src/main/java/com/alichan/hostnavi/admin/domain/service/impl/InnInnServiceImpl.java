@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -11,6 +11,7 @@ import com.alichan.hostnavi.admin.domain.logic.InnImageLogic;
 import com.alichan.hostnavi.admin.domain.logic.InnInnAmenityRelationLogic;
 import com.alichan.hostnavi.admin.domain.logic.InnInnFacilityRelationLogic;
 import com.alichan.hostnavi.admin.domain.logic.InnInnLogic;
+import com.alichan.hostnavi.admin.domain.service.InnInnSerivce;
 import com.alichan.hostnavi.admin.dto.requestparam.ImagesRequestParam;
 import com.alichan.hostnavi.admin.dto.requestparam.InnInnAmenityRelationRequestParam;
 import com.alichan.hostnavi.admin.dto.requestparam.InnInnFacilityRelationRequestParam;
@@ -26,7 +27,7 @@ import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class InnInnService {
+public class InnInnServiceImpl implements InnInnSerivce {
   @Autowired
   private InnInnMapper innInnMapper;
   @Autowired

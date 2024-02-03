@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +13,7 @@ import com.alichan.hostnavi.admin.domain.logic.InnInnLogic;
 import com.alichan.hostnavi.admin.domain.logic.ReservationReservationLogic;
 import com.alichan.hostnavi.admin.domain.logic.UserCreditCardLogic;
 import com.alichan.hostnavi.admin.domain.logic.UserUserLogic;
+import com.alichan.hostnavi.admin.domain.service.UserUserService;
 import com.alichan.hostnavi.admin.dto.requestparam.ImageRequestParam;
 import com.alichan.hostnavi.admin.dto.requestparam.UpdatedUserUserRequestParam;
 import com.alichan.hostnavi.admin.dto.requestparam.UserCreditCardRequestParam;
@@ -28,7 +29,7 @@ import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class UserUserService {
+public class UserUserServiceImpl implements UserUserService {
   @Autowired
   private UserUserMapper userUserMapper;
   @Autowired

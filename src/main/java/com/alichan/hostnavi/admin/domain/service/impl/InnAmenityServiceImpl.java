@@ -1,10 +1,11 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.alichan.hostnavi.admin.domain.logic.InnAmenityLogic;
+import com.alichan.hostnavi.admin.domain.service.InnAmenityService;
 import com.alichan.hostnavi.admin.dto.responsedata.InnAmenityResponseData;
 import com.alichan.hostnavi.admin.infrastracture.mapper.generated.InnAmenityMapper;
 import com.alichan.hostnavi.admin.infrastracture.model.generated.InnAmenity;
@@ -12,7 +13,7 @@ import com.alichan.hostnavi.admin.infrastracture.model.generated.InnAmenityExamp
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class InnAmenityService {
+public class InnAmenityServiceImpl implements InnAmenityService {
   @Autowired
   private InnAmenityMapper innAmenityMapper;
   @Autowired

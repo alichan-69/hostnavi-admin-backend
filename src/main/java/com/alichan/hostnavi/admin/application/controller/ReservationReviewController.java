@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.response.Response;
 import com.alichan.hostnavi.admin.application.util.Page;
-import com.alichan.hostnavi.admin.domain.service.ReservationReviewService;
+import com.alichan.hostnavi.admin.domain.service.impl.ReservationReviewService;
 import com.alichan.hostnavi.admin.dto.requestparam.ReservationReviewRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.ReservationReviewResponseData;
 import com.alichan.hostnavi.admin.util.FormatDataUitl;

@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -11,6 +11,7 @@ import com.alichan.hostnavi.admin.domain.logic.InnInnLogic;
 import com.alichan.hostnavi.admin.domain.logic.InnPageLogic;
 import com.alichan.hostnavi.admin.domain.logic.InnViewLogic;
 import com.alichan.hostnavi.admin.domain.logic.UserUserLogic;
+import com.alichan.hostnavi.admin.domain.service.InnViewService;
 import com.alichan.hostnavi.admin.dto.requestparam.InnViewRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.InnViewResponseData;
 import com.alichan.hostnavi.admin.error.Assert;
@@ -22,7 +23,7 @@ import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class InnViewService {
+public class InnViewServiceImpl implements InnViewService {
   @Autowired
   private InnViewMapper innViewMapper;
   @Autowired

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.response.Response;
-import com.alichan.hostnavi.admin.domain.service.ReservationMessageService;
+import com.alichan.hostnavi.admin.domain.service.impl.ReservationMessageService;
 import com.alichan.hostnavi.admin.dto.requestparam.ReservationMessageRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.ReservationMessageResponseData;
 import com.alichan.hostnavi.admin.dto.responsedata.WebSocketReservationMessageResponseData;

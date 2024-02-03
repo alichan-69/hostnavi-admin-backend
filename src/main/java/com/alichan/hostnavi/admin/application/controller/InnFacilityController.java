@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.response.Response;
 import com.alichan.hostnavi.admin.application.util.Page;
-import com.alichan.hostnavi.admin.domain.service.InnFacilityService;
+import com.alichan.hostnavi.admin.domain.service.impl.InnFacilityService;
 import com.alichan.hostnavi.admin.dto.responsedata.InnFacilityResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

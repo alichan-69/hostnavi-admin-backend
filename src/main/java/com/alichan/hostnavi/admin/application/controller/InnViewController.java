@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.form.FormattedInnViewUrlParam;
 import com.alichan.hostnavi.admin.application.response.Response;
 import com.alichan.hostnavi.admin.application.util.Page;
-import com.alichan.hostnavi.admin.domain.service.InnViewService;
+import com.alichan.hostnavi.admin.domain.service.impl.InnViewService;
 import com.alichan.hostnavi.admin.dto.requestparam.InnViewRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.InnViewResponseData;
 import com.alichan.hostnavi.admin.util.FormatDataUitl;

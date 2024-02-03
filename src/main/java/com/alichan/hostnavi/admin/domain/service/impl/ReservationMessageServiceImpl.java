@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.alichan.hostnavi.admin.domain.logic.ReservationReservationLogic;
 import com.alichan.hostnavi.admin.domain.logic.UserUserLogic;
+import com.alichan.hostnavi.admin.domain.service.ReservationMessageService;
 import com.alichan.hostnavi.admin.dto.requestparam.ReservationMessageRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.ReservationMessageResponseData;
 import com.alichan.hostnavi.admin.dto.responsedata.WebSocketInputReservationMessageResponseData;
@@ -21,7 +22,7 @@ import com.alichan.hostnavi.admin.infrastracture.model.generated.ReservationMess
 import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 
 @Service
-public class ReservationMessageService {
+public class ReservationMessageServiceImpl implements ReservationMessageService {
   @Autowired
   private ReservationMessageMapper reservationMessageMapper;
   @Autowired

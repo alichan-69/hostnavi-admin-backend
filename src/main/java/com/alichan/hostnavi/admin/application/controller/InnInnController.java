@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.response.Response;
 import com.alichan.hostnavi.admin.application.util.Page;
-import com.alichan.hostnavi.admin.domain.service.InnInnService;
+import com.alichan.hostnavi.admin.domain.service.impl.InnInnService;
 import com.alichan.hostnavi.admin.dto.requestparam.ImagesRequestParam;
 import com.alichan.hostnavi.admin.dto.requestparam.InnInnRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.ImageResponseData;

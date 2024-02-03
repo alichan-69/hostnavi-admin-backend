@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.alichan.hostnavi.admin.application.response.Response;
-import com.alichan.hostnavi.admin.domain.service.UserCreditCardService;
+import com.alichan.hostnavi.admin.domain.service.impl.UserCreditCardService;
 import com.alichan.hostnavi.admin.dto.requestparam.UserCreditCardRequestParam;
 import com.alichan.hostnavi.admin.dto.responsedata.UserCreditCardResponseData;
 import io.swagger.annotations.Api;

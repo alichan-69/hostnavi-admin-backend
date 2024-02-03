@@ -1,10 +1,11 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.alichan.hostnavi.admin.domain.logic.ReservationStatusLogic;
+import com.alichan.hostnavi.admin.domain.service.ReservationStatusService;
 import com.alichan.hostnavi.admin.dto.responsedata.ReservationStatusResponseData;
 import com.alichan.hostnavi.admin.infrastracture.mapper.generated.ReservationStatusMapper;
 import com.alichan.hostnavi.admin.infrastracture.model.generated.ReservationStatus;
@@ -12,7 +13,7 @@ import com.alichan.hostnavi.admin.infrastracture.model.generated.ReservationStat
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class ReservationStatusService {
+public class ReservationStatusServiceImpl implements ReservationStatusService {
   @Autowired
   private ReservationStatusMapper reservationStatusMapper;
   @Autowired

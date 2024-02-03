@@ -1,4 +1,4 @@
-package com.alichan.hostnavi.admin.domain.service;
+package com.alichan.hostnavi.admin.domain.service.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.alichan.hostnavi.admin.domain.service.InnStatusService;
 import com.alichan.hostnavi.admin.dto.responsedata.InnStatusResponseData;
 import com.alichan.hostnavi.admin.infrastracture.mapper.generated.InnStatusMapper;
 import com.alichan.hostnavi.admin.infrastracture.model.generated.InnStatus;
@@ -14,7 +15,7 @@ import com.alichan.hostnavi.admin.util.ModelMapperUtil;
 import com.github.pagehelper.PageHelper;
 
 @Service
-public class InnStatusService {
+public class InnStatusServiceImpl implements InnStatusService {
   @Autowired
   private InnStatusMapper innStatusMapper;
 
